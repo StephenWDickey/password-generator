@@ -1,31 +1,30 @@
-// Assignment code here
+// Password Generator!
 
+// i am using let instead of var because let cannot be redeclared
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+// this refers to the html element with the id 'generate' which is the button
+let generateBtn = document.querySelector("#generate");
 ////////////////////////////////////////////////////////
 
-// i will write the generatePassword function here
+// i will write the generatePassword function here so we can refer to it in writePassword
 function generatePassword() {
-
-    // i am using const instead of var because const values cannot be reassigned 
+ 
     // define lowercase
-    const lowercase = "abcdefghijklmnopqrstuvwxyz";
+    let lowercase = "abcdefghijklmnopqrstuvwxyz";
 
     // define uppercase
-    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     // define numbers
-    const numeric = "0123456789";
+    let numeric = "0123456789";
 
     // define special characters
     // special characters obtained from: https://owasp.org/www-community/password-special-characters
-    const special = " !#$%&'()*+,-./:;<=>?@[}^_`{}|~"
+    let special = " !#$%&'()*+,-./:;<=>?@[}^_`{}|~"
 
-    // i am using let instead of var because let cannot be redeclared
     // prompt for password length
     let passwordLength = prompt("Password may contain 8 to 128 characters. How many characters?");
-    // passwordLength is entered as string, we want an integer so...
+    // passwordLength is entered as string, we want a value so...
     passwordLength = parseInt(passwordLength);
 
     // prompt for lowercase
@@ -39,8 +38,8 @@ function generatePassword() {
 
 
     // password will add on each group as it is confirmed, so let's define password as ""
-    let password = "";
     let randomPassword = "";
+    let password ="";
 
     // now we add on each group
     if (passwordLowercase === true) {
@@ -61,7 +60,12 @@ function generatePassword() {
 
     // let's make sure the password length stays between 8 and 128
     if (passwordLength >= 8 && passwordLength <= 128) {
-        for (let i = 0; i < userLength; i++) {    
+        for (let i = 0; i < passwordLength; i++) {   
+            /* Math.floor will round down to an integer since Math.random generates
+            a number between 0 and 1 */
+            /* we want our password to be the length we specified at passwordLength
+            so the calculations below will add a special character to our password
+            without changing our desired length */
             let specialCharacter = randomPassword[Math.floor(Math.random()*randomPassword.length)];
             password = password + specialCharacter;
         }
@@ -71,7 +75,7 @@ function generatePassword() {
         window.alert("Password must be between 8 and 128 characters.");
     }
 
-    // what is user inputs nothing?
+    // edge case - what if user inputs nothing?
     if (randomPassword === "") {
         window.alert("Password must be between 8 and 128 characters.");
         // reset password
@@ -92,10 +96,11 @@ function generatePassword() {
 // Write password to the #password input
 // this function will make a password show up
 // we need to make the generatePassword function,
-// I will write the generate Password function above this one
+// I will write the generate Password function above this one so it can be referenced
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  // the element with id 'password' is the box where the password shows up
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
