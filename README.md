@@ -1,8 +1,10 @@
 # Password Generator!
 
+![screenshot of password generator](./passwordgeneratorscreenshot.png)
+
 ## Description
 In this week's challenge we were tasked with creating a password generator. This password generator is suppossed to prompt the user, getting input as to:
-* How long the password should be (must be between 8 and 128)
+* How long the password should be (must be between 8 and 128 characters)
 * If the password will contain lowercase characters
 * If the password will contain uppercase characters
 * If the password will contain numbers
@@ -15,3 +17,5 @@ For this challenge we had to program an html element to call a function that gen
 StephenWDickey
 GitHub page: https://github.com/StephenWDickey
 Deployment URL: 
+
+Joseph Jepson - Coding Bootcamp tutor
