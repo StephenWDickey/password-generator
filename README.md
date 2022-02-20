@@ -16,6 +16,6 @@ For this challenge we had to program an html element to call a function that gen
 
 StephenWDickey
 GitHub page: https://github.com/StephenWDickey
-Deployment URL: 
+Deployment URL: https://stephenwdickey.github.io/password-generator/
 
 Joseph Jepson - Coding Bootcamp tutor
